@@ -1,7 +1,7 @@
 {
   "name": "projeto_lista_de_tarefas",
   "version": "1.0.0",
-  "description": "",
+  "description": "LISTA DE TAREFAS",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js"
