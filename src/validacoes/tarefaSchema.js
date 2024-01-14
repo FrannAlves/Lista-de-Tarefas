@@ -7,9 +7,8 @@ const tarefaSchema = joi.object({
         'string.empty': 'O campo titulo é obrigatório.',
         'string.max': 'O campo título deve ter no máximo {#limit} caracteres.'
     }),
-    descricao: joi.string().optional().messages({
-        'string.base': 'O campo descricao deve ser string.'
-    }),
+    descricao: joi.optional(),
+    
     prioridade: joi.string().valid('baixa', 'média', 'alta').required().messages({
         'string.base': 'O campo prioridade deve ser string.',
         'any.required': 'O campo prioridade é obrigatório.',

@@ -14,5 +14,6 @@ CREATE TABLE usuarios (
     descricao TEXT,
     prioridade VARCHAR(6) NOT NULL,
     concluida BOOLEAN NOT NULL,
-    prazo_conclusao DATE NOT NULL ,
+    prazo_conclusao DATE NOT NULL,
+    usuario_id INTEGER REFERENCES usuarios(id) ON DELETE CASCADE
 );

@@ -23,4 +23,5 @@ rotas.post('/tarefa', validarRequisicao(tarefaSchema), cadastrarTarefa);
 rotas.get('/tarefa', listarTarefas);
 rotas.get('/tarefa/:id', DetalharTarefa);
 
+
 module.exports = rotas;
