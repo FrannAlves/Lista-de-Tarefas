@@ -132,10 +132,38 @@ const editarTarefa = async (req, res) => {
 }
 
 
+const excluirTarefa = async (req, res) => {
+    const { id } = req.params;
+    const usuario = req.usuario.id;
+
+    try {
+        const tarefaExiste = await knex('tarefas').where({ id, usuario_id: usuario }).first();
+
+        if (!tarefaExiste) {
+            return res.status(404).json({
+                mensagem: 'Tarefa não encontrada.'
+            })
+        }
+
+        await knex('tarefas').where({ id, usuario_id: usuario }).del();
+
+        return res.status(200).json({
+            mensagem: 'Tarefa excluída com sucesso.'
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            mensagem: 'Erro interno do servidor.'
+        });
+    }
+}
+
+
 
 module.exports = {
     cadastrarTarefa,
     listarTarefas,
     DetalharTarefa,
-    editarTarefa
+    editarTarefa,
+    excluirTarefa
 };
