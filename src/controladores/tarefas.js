@@ -15,7 +15,7 @@ const cadastrarTarefa = async (req, res) => {
 
         const tarefa = await knex('tarefas').insert({
             titulo,
-            descricao,
+            descricao: descricao !== undefined ? descricao : null,
             prioridade,
             concluida,
             prazo_conclusao,
@@ -108,7 +108,7 @@ const editarTarefa = async (req, res) => {
 
         const tarefaAtualizada = await knex('tarefas').where({ id }).update({
             titulo,
-            descricao,
+            descricao: descricao !== undefined ? descricao : null,
             prioridade,
             concluida,
             prazo_conclusao
