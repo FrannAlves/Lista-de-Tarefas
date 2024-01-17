@@ -92,8 +92,50 @@ const DetalharTarefa = async (req, res) => {
 
 
 
+const editarTarefa = async (req, res) => {
+    const { titulo, descricao, prioridade, concluida, prazo_conclusao } = req.body;
+    const { id } = req.params;
+    const usuario = req.usuario.id;
+
+    try {
+        const tarefaExiste = await knex('tarefas').where({ id, usuario_id: usuario }).first();
+
+        if (!tarefaExiste) {
+            return res.status(404).json({
+                mensagem: 'Tarefa não encontrada.'
+            })
+        }
+
+        const tarefaAtualizada = await knex('tarefas').where({ id }).update({
+            titulo,
+            descricao,
+            prioridade,
+            concluida,
+            prazo_conclusao
+        });
+
+        if (!tarefaAtualizada) {
+            return res.status(400).json({
+                mensagem: 'A tarefa não foi atualizada.'
+            })
+        }
+
+        return res.status(200).json({
+            mensagem: 'Tarefa atualizada com sucesso.'
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            mensagem: 'Erro interno do servidor.'
+        });
+    }
+}
+
+
+
 module.exports = {
     cadastrarTarefa,
     listarTarefas,
     DetalharTarefa,
+    editarTarefa
 };
