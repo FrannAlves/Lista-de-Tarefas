@@ -22,19 +22,19 @@ Este é um projeto de aplicativo de lista de tarefas que permite aos usuários g
 
 ![Cadastrar](https://github.com/FrannAlves/Lista-de-Tarefas/blob/main/imagens/CADASTRAR%20TAREFA.png?raw=true)
 
-## Listar tarefas
+## Listar Tarefas
 
 ![Listar](https://github.com/FrannAlves/Lista-de-Tarefas/blob/main/imagens/LISTAR%20TAREFAS.png?raw=true)
 
-## Detalhar tarefa
+## Detalhar Tarefa
 
 ![Detalhar](https://github.com/FrannAlves/Lista-de-Tarefas/blob/main/imagens/DETALHAR%20TAREFAS.png?raw=true)
 
-## Editar tarefa
+## Editar Tarefa
 
 ![Editar](https://github.com/FrannAlves/Lista-de-Tarefas/blob/main/imagens/ATUALIZAR%20TAREFA.png?raw=true)
 
-## Excluir tarefa
+## Excluir Tarefa
 
 ![Editar](https://github.com/FrannAlves/Lista-de-Tarefas/blob/main/imagens/DELETAR%20TAREFA.png?raw=true)
 
